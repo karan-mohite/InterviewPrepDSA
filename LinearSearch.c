@@ -1,22 +1,8 @@
 //WAP to search a number using linear search and create a user defined function.
 
-void main()
+LinearSearch(int a[],int r,int search)
 {
-    int i,a[10],search;
-    int k=0,r;
-
-    printf("Enter a range:");
-    scanf("%d",&r);
-
-    printf("Enter %d numbers:",r);
-    for(i=0;i<r;i++)
-    {
-        scanf("%d",&a[i]);
-    }
-
-    printf("Enter a number that you want to search:");
-    scanf("%d",&search);
-
+    int k=0,i;
     for(i=0;i<r;i++)
     {
         if(a[i]==search)
@@ -30,5 +16,24 @@ void main()
     {
         printf("Number is not found..!!");
     }
+}
+void main()
+{
+    int i,a[10],search;
+    int r;
+
+    printf("Enter a range:");
+    scanf("%d",&r);
+
+    printf("Enter %d numbers:",r);
+    for(i=0;i<r;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    printf("Enter a number that you want to search:");
+    scanf("%d",&search);
+
+    LinearSearch(a,r,search);
     getch();
 }
