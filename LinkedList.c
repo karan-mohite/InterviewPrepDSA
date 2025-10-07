@@ -30,11 +30,45 @@ void insertStart()
 }
 void insertEnd()
 {
-
+   struct node *j1,*g1;
+   j1=createNode();
+   if(start==0)
+   {
+       start=j1;
+   }
+   else
+   {
+       g1=start;
+       while(g1->next!=0)
+       {
+            g1=g1->next;
+       }
+       g1->next=j1;
+   }
 }
 void insertMiddle()
 {
+    struct node *h1,*f,*j;
+    h1=createNode();
 
+    if(start==0)
+    {
+        start=h1;
+    }
+    else
+    {
+        int d;
+        printf("Enter a data where you want to insert:");
+        scanf("%d ",&d);
+        f=start;
+        while(f->next->data!=d)
+        {
+            f=f->next;
+        }
+        j=f->next;
+        f->next=h1;
+        h1->next=j;
+    }
 }
 void deleteStart()
 {
@@ -54,11 +88,48 @@ void deleteStart()
 }
 void deleteEnd()
 {
-
+    struct node *h1,*a1;
+    if(start==0)
+    {
+        printf("No node to delete..!!");
+    }
+    else
+    {
+        h1=start;
+        while(h1->next->next!=0)
+        {
+            h1=h1->next;
+        }
+        a1=h1->next;
+        h1->next=0;
+        free(a1);
+    }
 }
 void deleteMiddle()
 {
+    struct node *g,*p,*h;
+    if(start==0)
+    {
+        printf("There is no any node to delete..!!");
+    }
+    else
+    {
+        int d;
 
+        g=start;
+        printf("Enter a data that you want to delete:");
+        scanf("%d",&d);
+
+        while(g->next->data!=d)
+        {
+            g=g->next;
+        }
+        p=g->next->next;
+        g->next->next=0;
+        h=g->next;
+        g->next=p;
+        free(h);
+    }
 }
 void display()
 {
@@ -126,7 +197,6 @@ void main()
             default:
                 printf("Wrong Input");
         }
-
         getch();
     }
 }
