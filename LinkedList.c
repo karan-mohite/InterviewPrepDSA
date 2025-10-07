@@ -38,7 +38,19 @@ void insertMiddle()
 }
 void deleteStart()
 {
-
+    struct node *y1;
+   if(start==0)
+   {
+       printf("There is no any node to delete..!!");
+   }
+   else
+   {
+       y1=start;
+       start=start->next;
+       y1->next=0;
+       free(y1);
+       printf("Node Deleted Successfully..!!");
+   }
 }
 void deleteEnd()
 {
