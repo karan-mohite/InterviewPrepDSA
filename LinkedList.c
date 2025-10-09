@@ -72,7 +72,7 @@ void insertMiddle()
 }
 void deleteStart()
 {
-    struct node *y1;
+   struct node *y1;
    if(start==0)
    {
        printf("There is no any node to delete..!!");
