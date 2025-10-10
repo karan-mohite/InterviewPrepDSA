@@ -4,11 +4,11 @@ struct BTNode
 	struct BTNode *left;
 	int data;
 	struct BTNode *right;
-}
+};
 -------inoderder Pseudocode-------
 void inOrder(struct BTNode *r)
 {	
-	if(root)
+	if(r)	//r-means root
 	{	
 		inOrder(r->left);
 		printf("%d",r->data);
@@ -18,7 +18,7 @@ void inOrder(struct BTNode *r)
 -------Preorder Pseudocode-------
 void preOrder(struct BTNode *r)
 {	
-	if(root)
+	if(r)
 	{	
 		printf("%d",r->data);
 		preOrder(r->left);
@@ -28,10 +28,39 @@ void preOrder(struct BTNode *r)
 -------PostOrder Pseudocode-------
 void postOrder(struct BTNode *r)
 {	
-	if(root)
+	if(r)
 	{	
 		postOrder(r->left);
 		printf("%d",r->data);
 		postOrder(r->right);
 	}
 }
+-------Level Order Traversal Pseudocode-------
+void levelOrder(struct BTNode *r)
+{	
+	struct BTNode *temp;
+	struct Queue *Q=createQueue(6);
+	
+	if(r)
+	{	
+		enQueue(Q,r);
+		while(!isEmptyQueue(Q))
+		{	
+			temp=deQueue(Q);
+			printf("%d",temp->data);
+			if(temp->left)
+			{
+				enQueue(Q,temp->left);
+			}
+			if(temp->right)
+			{	
+				enQueue(Q,temp->right);
+			}
+		}
+	}
+	else
+	{	
+		return ;
+	}
+}
+----------------------------------------------
