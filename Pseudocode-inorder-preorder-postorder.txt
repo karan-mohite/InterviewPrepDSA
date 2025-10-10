@@ -20,8 +20,8 @@ void preOrder(struct BTNode *r)
 {	
 	if(root)
 	{	
-		preOrder(r->left);
 		printf("%d",r->data);
+		preOrder(r->left);
 		preOrder(r->right);
 	}
 }
