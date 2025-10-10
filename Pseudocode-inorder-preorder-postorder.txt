@@ -1,0 +1,37 @@
+*************Pseudocode*************
+struct BTNode
+{
+	struct BTNode *left;
+	int data;
+	struct BTNode *right;
+}
+-------inoderder Pseudocode-------
+void inOrder(struct BTNode *r)
+{	
+	if(root)
+	{	
+		inOrder(r->left);
+		printf("%d",r->data);
+		inOrder(r->right);
+	}
+}
+-------Preorder Pseudocode-------
+void preOrder(struct BTNode *r)
+{	
+	if(root)
+	{	
+		preOrder(r->left);
+		printf("%d",r->data);
+		preOrder(r->right);
+	}
+}
+-------PostOrder Pseudocode-------
+void postOrder(struct BTNode *r)
+{	
+	if(root)
+	{	
+		postOrder(r->left);
+		printf("%d",r->data);
+		postOrder(r->right);
+	}
+}
